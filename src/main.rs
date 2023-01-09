@@ -1,8 +1,13 @@
+// !Resources on salted passwords
+// https://cyberhoot.com/cybrary/password-salting/
+// https://auth0.com/blog/adding-salt-to-hashing-a-better-way-to-store-passwords/
+
 use data_encoding::HEXUPPER;
 use ring::error::Unspecified;
 use ring::rand::SecureRandom;
 use ring::{digest, pbkdf2, rand};
 use std::num::NonZeroU32;
+
 fn main() -> Result<(), Unspecified> {
     type CREDENTIAL = [u8; CREDENTIAL_LEN];
     // hash length
